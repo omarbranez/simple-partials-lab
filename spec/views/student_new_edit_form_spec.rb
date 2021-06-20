@@ -10,14 +10,6 @@ RSpec.describe "create and edit form" do
       expect(rendered).to match /Create Student/
     end
 
-    it "directly renders the form in a students/form partial" do
-      view.lookup_context.prefixes = %w[students]
-      student = Student.new
-      assign(:student, student)
-      render :template => "students/new.html.erb"
-      expect(rendered).to render_template(:partial => "students/_form")
-    end
-
     it "displays the create form from the partial" do
       student = Student.new
       assign(:student, student)
